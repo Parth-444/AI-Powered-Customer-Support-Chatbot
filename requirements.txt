@@ -1,8 +1,10 @@
-fastapi
-uvicorn
+fastapi~=0.115.8
+uvicorn~=0.34.0
 python-dotenv
 sqlalchemy
-transformers
+transformers~=4.48.2
 torch
 redis
 celery
+pandas~=2.2.3
+datasets~=3.2.0

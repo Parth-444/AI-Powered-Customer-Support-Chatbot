@@ -18,14 +18,11 @@ responses = {
 }
 
 
-@app.get("/")
-def home():
-    return {"message": "Hello, World!"}
-
-
 @app.post("/chat")
 def chat(query: str):
     result = intent_classifier(query)
-    intent = result
-    return {"response": "This is a placeholder response. "}
-ss=pipeline
+    intent = result[0]["label"].lower()
+    response = responses.get(intent, responses["default"])
+    print(intent)
+    return {"intent": intent, "response": response}
+
